@@ -1,0 +1,54 @@
+{
+  "perfumes": [
+    {
+      "id": 1,
+      "name": "Midnight Bloom",
+      "brand": "Aetheria",
+      "description": "A deep, sensual floral with notes of jasmine, sandalwood, and dark cherry. Perfect for evening wear.",
+      "price": 125.00,
+      "size_ml": 100,
+      "category": "Eau de Parfum (EDP)",
+      "image_url": "https://dummyimage.com/400x400/8064A2/ffffff&text=Midnight+Bloom",
+      "stock": 45,
+      "rating": 4.8
+    },
+    {
+      "id": 2,
+      "name": "Ocean Mist",
+      "brand": "Vivid Scents",
+      "description": "A crisp, aquatic fragrance combining sea salt, white tea, and citrus zest. Ideal for daily use.",
+      "price": 75.50,
+      "size_ml": 50,
+      "category": "Eau de Toilette (EDT)",
+      "image_url": "https://dummyimage.com/400x400/4F8A8B/ffffff&text=Ocean+Mist",
+      "stock": 120,
+      "rating": 4.2
+    },
+    {
+      "id": 3,
+      "name": "Sandalwood Reserve",
+      "brand": "The Noble Collection",
+      "description": "An opulent, woody scent focused on rich Indian sandalwood, amber, and a touch of vanilla bean.",
+      "price": 189.99,
+      "size_ml": 75,
+      "category": "Extrait de Parfum",
+      "image_url": "https://dummyimage.com/400x400/654321/ffffff&text=Sandalwood+Reserve",
+      "stock": 30,
+      "rating": 4.9
+    },
+    {
+      "id": 4,
+      "name": "Pink Grapefruit & Mint",
+      "brand": "Fresh Atelier",
+      "description": "A lively, zesty cologne with high notes of pink grapefruit, fresh garden mint, and musk. Extremely refreshing.",
+      "price": 45.00,
+      "size_ml": 120,
+      "category": "Cologne",
+      "image_url": "https://dummyimage.com/400x400/FF69B4/000000&text=Grapefruit+%26+Mint",
+      "stock": 88,
+      "rating": 3.9
+    }
+  ],
+  "cart": [],
+  "wishlist": []
+}
