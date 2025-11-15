@@ -1,15 +1,29 @@
-
-import HeaderCarousel from "./components/HeaderCarousel";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import HeaderCarousel from "./components/HeaderCarousel";
 import ProductsPage from "./pages/ProductsPage";
+import Login from "./pages/Login"; // 👈 Make sure you import this
+import Signup from "./pages/Signup";
 
 function App() {
-  return <div>
-    <Navbar /> <br />
-    <HeaderCarousel />
-    <ProductsPage />
-    </div>;
+  return (
+    <Router>
+      <Navbar /> <br />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <HeaderCarousel />
+              <ProductsPage />
+            </>
+          }
+        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
-

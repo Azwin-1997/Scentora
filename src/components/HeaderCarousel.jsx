@@ -7,21 +7,21 @@ function HeaderCarousel() {
       id: 1,
       image:
         "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=1500&q=80",
-      caption: "Unveil Your Signature Scent ✨",
+      caption: "",
       subtext: "Elegance begins with a fragrance that defines you.",
     },
     {
       id: 2,
       image:
         "https://images.unsplash.com/photo-1618354691417-45f0bce6db99?auto=format&fit=crop&w=1500&q=80",
-      caption: "Embrace the Art of Fragrance 💎",
+      caption: "",
       subtext: "Where passion meets perfection in every drop.",
     },
     {
       id: 3,
       image:
         "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1500&q=80",
-      caption: "Elevate Every Moment 🌸",
+      caption: "",
       subtext: "Perfumes that define grace, charm, and sophistication.",
     },
   ];

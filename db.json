@@ -1,11 +1,11 @@
 {
   "perfumes": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Midnight Bloom",
       "brand": "Aetheria",
       "description": "A deep, sensual floral with notes of jasmine, sandalwood, and dark cherry. Perfect for evening wear.",
-      "price": 125.00,
+      "price": 125,
       "size_ml": 100,
       "category": "Eau de Parfum (EDP)",
       "image_url": "https://dummyimage.com/400x400/8064A2/ffffff&text=Midnight+Bloom",
@@ -13,11 +13,11 @@
       "rating": 4.8
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Ocean Mist",
       "brand": "Vivid Scents",
       "description": "A crisp, aquatic fragrance combining sea salt, white tea, and citrus zest. Ideal for daily use.",
-      "price": 75.50,
+      "price": 75.5,
       "size_ml": 50,
       "category": "Eau de Toilette (EDT)",
       "image_url": "https://dummyimage.com/400x400/4F8A8B/ffffff&text=Ocean+Mist",
@@ -25,7 +25,7 @@
       "rating": 4.2
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Sandalwood Reserve",
       "brand": "The Noble Collection",
       "description": "An opulent, woody scent focused on rich Indian sandalwood, amber, and a touch of vanilla bean.",
@@ -37,16 +37,31 @@
       "rating": 4.9
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Pink Grapefruit & Mint",
       "brand": "Fresh Atelier",
       "description": "A lively, zesty cologne with high notes of pink grapefruit, fresh garden mint, and musk. Extremely refreshing.",
-      "price": 45.00,
+      "price": 45,
       "size_ml": 120,
       "category": "Cologne",
       "image_url": "https://dummyimage.com/400x400/FF69B4/000000&text=Grapefruit+%26+Mint",
       "stock": 88,
       "rating": 3.9
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Aswin",
+      "email": "aswin@example.com",
+      "password": "123456"
+    },
+    {
+      "id": "4c3e",
+      "name": "Vismaya KP",
+      "email": "vismaya@gmail.com",
+      "password": "12345",
+      "confirmPassword": "12345"
     }
   ],
   "cart": [],
