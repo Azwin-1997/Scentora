@@ -4,6 +4,7 @@ import HeaderCarousel from "./components/HeaderCarousel";
 import ProductsPage from "./pages/ProductsPage";
 import Login from "./pages/Login"; // 👈 Make sure you import this
 import Signup from "./pages/Signup";
+import CartPage from "./pages/CartPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/cart" element={<CartPage />}/>
       </Routes>
     </Router>
   );

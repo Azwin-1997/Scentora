@@ -1,5 +1,5 @@
 {
-  "perfumes": [
+  "products": [
     {
       "id": "1",
       "name": "Midnight Bloom",
@@ -57,13 +57,20 @@
       "password": "123456"
     },
     {
-      "id": "4c3e",
+      "id": "2",
       "name": "Vismaya KP",
       "email": "vismaya@gmail.com",
       "password": "12345",
       "confirmPassword": "12345"
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "5fb6",
+      "userId": "1",
+      "productId": 3,
+      "quantity": 1
+    }
+  ],
   "wishlist": []
 }

@@ -1,3 +1,5 @@
+import AddToCartButton from "./AddToCartButton";
+
 function ProductCard({ product }) {
   return (
     <div className="border rounded-xl shadow-sm hover:shadow-md transition bg-white overflow-hidden">
@@ -38,9 +40,7 @@ function ProductCard({ product }) {
 
         {/* Buttons */}
         <div className="flex gap-3">
-          <button className="flex-1 bg-rose-600 text-white py-2 rounded-lg hover:bg-rose-700 transition">
-            Add to Cart
-          </button>
+          <AddToCartButton productId={product.id}/>
           <button className="flex-1 border border-rose-600 text-rose-600 py-2 rounded-lg hover:bg-rose-50 transition">
             Wishlist
           </button>

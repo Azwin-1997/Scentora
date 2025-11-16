@@ -1,15 +1,45 @@
+import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate()
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-    // 🔐 Later: Add login validation or API call here
+    const { email, password } = formData;
+
+     if (!email || !password) {
+      alert(`You can't leave a field empty`);
+      return;
+    }
+
+   const res = await axios.get(`http://localhost:3001/users`);
+const users = res.data;
+
+const userExists = users.find(
+  (user) => user.email === formData.email && user.password === formData.password
+);
+
+if (userExists) {
+  localStorage.setItem("loggedInUser", JSON.stringify(userExists));
+
+  alert("Login Successful");
+  navigate("/");
+} else {
+  alert("Invalid email or password");
+}
+
+
   };
 
   return (
@@ -33,8 +63,9 @@ function Login() {
             <input
               type="email"
               id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={formData.email}
+              name="email"
+              onChange={handleChange}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400"
               placeholder="you@example.com"
@@ -51,8 +82,9 @@ function Login() {
             <input
               type="password"
               id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={formData.password}
+              name="password"
+              onChange={handleChange}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400"
               placeholder="Enter your password"
