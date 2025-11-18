@@ -8,7 +8,7 @@ function Login() {
     password: "",
   });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -16,30 +16,40 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const { email, password } = formData;
 
-     if (!email || !password) {
-      alert(`You can't leave a field empty`);
+    // Validation
+    if (!email || !password) {
+      alert("You can't leave a field empty");
       return;
     }
 
-   const res = await axios.get(`http://localhost:3001/users`);
-const users = res.data;
+    // Fetch users from DB
+    const res = await axios.get("http://localhost:3001/users");
+    const users = res.data;
 
-const userExists = users.find(
-  (user) => user.email === formData.email && user.password === formData.password
-);
+    // Find matching user
+    const foundUser = users.find(
+      (user) => user.email === email && user.password === password
+    );
 
-if (userExists) {
-  localStorage.setItem("loggedInUser", JSON.stringify(userExists));
+    if (!foundUser) {
+      alert("Invalid email or password");
+      return;
+    }
 
-  alert("Login Successful");
-  navigate("/");
-} else {
-  alert("Invalid email or password");
-}
+    // Store login state
+    localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
 
+    alert("Login Successful");
 
+    // Role-based Redirection
+    if (foundUser.role === "admin") {
+      navigate("/admin");          // ✅ Fixed: correct admin route
+    } else {
+      navigate("/");               // Normal user home
+    }
   };
 
   return (
@@ -53,6 +63,8 @@ if (userExists) {
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-5">
+
+          {/* Email */}
           <div>
             <label
               htmlFor="email"
@@ -72,6 +84,7 @@ if (userExists) {
             />
           </div>
 
+          {/* Password */}
           <div>
             <label
               htmlFor="password"
@@ -86,11 +99,12 @@ if (userExists) {
               name="password"
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-400"
               placeholder="Enter your password"
             />
           </div>
 
+          {/* Submit */}
           <button
             type="submit"
             className="w-full bg-rose-600 text-white py-2 rounded-lg hover:bg-rose-700 transition"

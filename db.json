@@ -1,10 +1,10 @@
 {
   "products": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Midnight Bloom",
       "brand": "Aetheria",
-      "description": "A deep, sensual floral with notes of jasmine, sandalwood, and dark cherry. Perfect for evening wear.",
+      "description": "A deep, sensual floral with notes of jasmine, sandalwood, and dark cherry.",
       "price": 125,
       "size_ml": 100,
       "category": "Eau de Parfum (EDP)",
@@ -13,10 +13,10 @@
       "rating": 4.8
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Ocean Mist",
       "brand": "Vivid Scents",
-      "description": "A crisp, aquatic fragrance combining sea salt, white tea, and citrus zest. Ideal for daily use.",
+      "description": "A crisp, aquatic fragrance with sea salt, white tea, and citrus.",
       "price": 75.5,
       "size_ml": 50,
       "category": "Eau de Toilette (EDT)",
@@ -25,10 +25,10 @@
       "rating": 4.2
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Sandalwood Reserve",
       "brand": "The Noble Collection",
-      "description": "An opulent, woody scent focused on rich Indian sandalwood, amber, and a touch of vanilla bean.",
+      "description": "Rich Indian sandalwood with amber and vanilla.",
       "price": 189.99,
       "size_ml": 75,
       "category": "Extrait de Parfum",
@@ -37,10 +37,10 @@
       "rating": 4.9
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "Pink Grapefruit & Mint",
       "brand": "Fresh Atelier",
-      "description": "A lively, zesty cologne with high notes of pink grapefruit, fresh garden mint, and musk. Extremely refreshing.",
+      "description": "A lively citrus cologne with fresh mint.",
       "price": 45,
       "size_ml": 120,
       "category": "Cologne",
@@ -51,25 +51,54 @@
   ],
   "users": [
     {
-      "id": "1",
-      "name": "Aswin",
-      "email": "aswin@example.com",
-      "password": "123456"
-    },
-    {
-      "id": "2",
+      "id": "a734",
       "name": "Vismaya KP",
       "email": "vismaya@gmail.com",
       "password": "12345",
-      "confirmPassword": "12345"
-    }
+      "role": "user"
+    },
+     {
+     "id": 99,
+     "name": "Admin",
+     "email": "admin@scentora.com",
+     "password": "admin123",
+     "role": "admin"
+   }
   ],
   "cart": [
     {
-      "id": "5fb6",
+      "id": "0d3e",
       "userId": "1",
-      "productId": 3,
+      "product": {
+        "id": 2,
+        "name": "Ocean Mist",
+        "brand": "Vivid Scents",
+        "description": "A crisp, aquatic fragrance with sea salt, white tea, and citrus.",
+        "price": 75.5,
+        "size_ml": 50,
+        "category": "Eau de Toilette (EDT)",
+        "image_url": "https://dummyimage.com/400x400/4F8A8B/ffffff&text=Ocean+Mist",
+        "stock": 120,
+        "rating": 4.2
+      },
       "quantity": 1
+    },
+    {
+      "id": "c96b",
+      "userId": "a734",
+      "product": {
+        "id": 2,
+        "name": "Ocean Mist",
+        "brand": "Vivid Scents",
+        "description": "A crisp, aquatic fragrance with sea salt, white tea, and citrus.",
+        "price": 75.5,
+        "size_ml": 50,
+        "category": "Eau de Toilette (EDT)",
+        "image_url": "https://dummyimage.com/400x400/4F8A8B/ffffff&text=Ocean+Mist",
+        "stock": 120,
+        "rating": 4.2
+      },
+      "quantity": 2
     }
   ],
   "wishlist": []

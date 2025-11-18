@@ -9,6 +9,8 @@ function CartPage() {
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
   const { setCartCount } = useContext(CartContext);
+  
+  console.log(cartItems);
 
   // Fetch user cart on load
   useEffect(() => {

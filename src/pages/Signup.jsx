@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function Signup() {
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,26 +23,41 @@ function Signup() {
 
     const { name, email, password, confirmPassword } = formData;
 
+    // VALIDATION
     if (!name || !email || !password || !confirmPassword) {
-      alert(`You can't leave a field empty`);
+      alert("You can't leave a field empty");
       return;
     }
 
     if (password !== confirmPassword) {
-      alert(`Passwords do not match`);
+      alert("Passwords do not match");
       return;
     }
 
-    const res = await axios.get(`http://localhost:3001/users`);
+    // CHECK IF USER ALREADY EXISTS
+    const res = await axios.get("http://localhost:3001/users");
     const users = res.data;
-    const userExists = users.find((user) => user.email === formData.email);
+
+    const userExists = users.find((user) => user.email === email);
+
     if (userExists) {
-      alert(`User Already Exist`);
-    } else {
-      const req = await axios.post(`http://localhost:3001/users`, formData);
-      alert(`Successfully Signed in`);
-      navigate("/");
+      alert("User Already Exist");
+      return;
     }
+
+    // CREATE NEW USER OBJECT (DO NOT STORE confirmPassword)
+    const newUser = {
+      name,
+      email,
+      password,
+      role: "user", // Always assign normal user
+    };
+
+    // SAVE TO DATABASE
+    await axios.post("http://localhost:3001/users", newUser);
+
+    alert("Successfully Signed Up");
+    navigate("/");
   };
 
   return (
@@ -57,76 +73,60 @@ function Signup() {
         <form className="space-y-5" onSubmit={handleSubmit}>
           {/* Full Name */}
           <div>
-            <label
-              htmlFor="name"
-              className="block text-gray-700 text-sm font-medium mb-1"
-            >
+            <label className="block text-gray-700 text-sm font-medium mb-1">
               Full Name
             </label>
             <input
               type="text"
-              id="name"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-400"
               placeholder="John Doe"
             />
           </div>
 
           {/* Email */}
           <div>
-            <label
-              htmlFor="email"
-              className="block text-gray-700 text-sm font-medium mb-1"
-            >
+            <label className="block text-gray-700 text-sm font-medium mb-1">
               Email Address
             </label>
             <input
               type="email"
-              id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-400"
               placeholder="you@example.com"
             />
           </div>
 
           {/* Password */}
           <div>
-            <label
-              htmlFor="password"
-              className="block text-gray-700 text-sm font-medium mb-1"
-            >
+            <label className="block text-gray-700 text-sm font-medium mb-1">
               Password
             </label>
             <input
               type="password"
-              id="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-400"
               placeholder="Enter password"
             />
           </div>
 
           {/* Confirm Password */}
           <div>
-            <label
-              htmlFor="confirmPassword"
-              className="block text-gray-700 text-sm font-medium mb-1"
-            >
+            <label className="block text-gray-700 text-sm font-medium mb-1">
               Confirm Password
             </label>
             <input
               type="password"
-              id="confirmPassword"
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-400"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-rose-400"
               placeholder="Re-enter password"
             />
           </div>
