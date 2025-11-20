@@ -1,41 +1,61 @@
+import { Link } from "react-router-dom";
+
 function AdminDashboard() {
   return (
     <div className="min-h-screen flex bg-gray-100">
-
       {/* SIDEBAR */}
       <aside className="w-64 bg-gray-800 text-white flex flex-col p-6">
         <h2 className="text-2xl font-bold mb-8">Admin Panel</h2>
 
         <nav className="flex flex-col gap-4">
-          <a className="px-4 py-2 rounded-lg hover:bg-gray-700 cursor-pointer">
+          <Link
+            to="/admin"
+            className="px-4 py-2 rounded-lg hover:bg-gray-700 cursor-pointer"
+          >
             Dashboard
-          </a>
-          <a className="px-4 py-2 rounded-lg hover:bg-gray-700 cursor-pointer">
+          </Link>
+
+          <Link
+            to="/admin/manage-products"
+            className="px-4 py-2 rounded-lg hover:bg-gray-700 cursor-pointer"
+          >
             Manage Products
-          </a>
-          <a className="px-4 py-2 rounded-lg hover:bg-gray-700 cursor-pointer">
+          </Link>
+
+          <Link
+            to="/admin/add-product"
+            className="px-4 py-2 rounded-lg hover:bg-gray-700 cursor-pointer"
+          >
             Add Product
-          </a>
-          <a className="px-4 py-2 rounded-lg hover:bg-gray-700 cursor-pointer">
+          </Link>
+
+          <Link
+            to="/admin/users"
+            className="px-4 py-2 rounded-lg hover:bg-gray-700 cursor-pointer"
+          >
             Users
-          </a>
+          </Link>
         </nav>
       </aside>
 
       {/* MAIN CONTENT */}
       <main className="flex-1 p-6">
-
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-3xl font-bold text-gray-800">Dashboard</h1>
-          <button className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
-            Logout
-          </button>
+
+          <div className="flex items-center gap-3">
+            <Link
+              to="/admin/add-product"
+              className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
+            >
+              + Add Product
+            </Link>
+          </div>
         </div>
 
         {/* STAT CARDS */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
           <div className="bg-white shadow rounded-xl p-6">
             <h3 className="text-gray-600 text-sm">Total Products</h3>
             <p className="text-3xl font-bold mt-2 text-gray-800">120</p>
@@ -55,7 +75,6 @@ function AdminDashboard() {
             <h3 className="text-gray-600 text-sm">Low Stock Items</h3>
             <p className="text-3xl font-bold mt-2 text-gray-800">6</p>
           </div>
-
         </div>
 
         {/* RECENT ACTIVITY */}
@@ -66,17 +85,19 @@ function AdminDashboard() {
 
           <ul className="space-y-3">
             <li className="border-b pb-2 text-gray-700">
-              ✔ New user registered — <span className="font-semibold">Aswin</span>
+              ✔ New user registered —{" "}
+              <span className="font-semibold">Aswin</span>
             </li>
             <li className="border-b pb-2 text-gray-700">
-              ✔ Stock updated — <span className="font-semibold">Ocean Mist</span>
+              ✔ Stock updated —{" "}
+              <span className="font-semibold">Ocean Mist</span>
             </li>
             <li className="text-gray-700">
-              ✔ New product added — <span className="font-semibold">Vanilla Woods</span>
+              ✔ New product added —{" "}
+              <span className="font-semibold">Vanilla Woods</span>
             </li>
           </ul>
         </div>
-
       </main>
     </div>
   );

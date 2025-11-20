@@ -57,13 +57,20 @@
       "password": "12345",
       "role": "user"
     },
-     {
-     "id": 99,
-     "name": "Admin",
-     "email": "admin@scentora.com",
-     "password": "admin123",
-     "role": "admin"
-   }
+    {
+      "id": 99,
+      "name": "Admin",
+      "email": "admin@scentora.com",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": "b7fd",
+      "name": "Gayathri K",
+      "email": "gayu@gmail.com",
+      "password": "12345678",
+      "role": "user"
+    }
   ],
   "cart": [
     {
@@ -97,6 +104,23 @@
         "image_url": "https://dummyimage.com/400x400/4F8A8B/ffffff&text=Ocean+Mist",
         "stock": 120,
         "rating": 4.2
+      },
+      "quantity": 2
+    },
+    {
+      "id": "8637",
+      "userId": "b7fd",
+      "product": {
+        "id": 4,
+        "name": "Pink Grapefruit & Mint",
+        "brand": "Fresh Atelier",
+        "description": "A lively citrus cologne with fresh mint.",
+        "price": 45,
+        "size_ml": 120,
+        "category": "Cologne",
+        "image_url": "https://dummyimage.com/400x400/FF69B4/000000&text=Grapefruit+%26+Mint",
+        "stock": 88,
+        "rating": 3.9
       },
       "quantity": 2
     }

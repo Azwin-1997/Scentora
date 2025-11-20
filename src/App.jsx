@@ -6,6 +6,7 @@ import Login from "./pages/Login"; // 👈 Make sure you import this
 import Signup from "./pages/Signup";
 import CartPage from "./pages/CartPage";
 import AdminDashboard from "./admin/AdminDashboard";
+import AddProduct from "./admin/AddProduct";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/cart" element={<CartPage />}/>
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/add-product" element={<AddProduct />}/>
       </Routes>
     </Router>
   );
