@@ -47,6 +47,18 @@
       "image_url": "https://dummyimage.com/400x400/FF69B4/000000&text=Grapefruit+%26+Mint",
       "stock": 88,
       "rating": 3.9
+    },
+    {
+      "id": "9045",
+      "name": "Fogg",
+      "brand": "Body Spray",
+      "description": "Kya Chal Raha Hei? fogg chal raha hai",
+      "price": 130,
+      "size_ml": 150,
+      "category": "Cologne",
+      "image_url": "https://m.media-amazon.com/images/I/611+OfxzQRL.jpg",
+      "stock": 2,
+      "rating": 4.5
     }
   ],
   "users": [

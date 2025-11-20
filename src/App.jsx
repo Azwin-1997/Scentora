@@ -7,6 +7,7 @@ import Signup from "./pages/Signup";
 import CartPage from "./pages/CartPage";
 import AdminDashboard from "./admin/AdminDashboard";
 import AddProduct from "./admin/AddProduct";
+import AdminManageProducts from "./admin/AdminManageProducts";
 
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
         <Route path="/cart" element={<CartPage />}/>
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/add-product" element={<AddProduct />}/>
+        <Route path="/admin/manage-products" element={<AdminManageProducts />}/>
+
       </Routes>
     </Router>
   );

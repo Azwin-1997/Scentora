@@ -25,23 +25,32 @@ function Navbar() {
     <nav className="bg-gray-800 shadow-lg px-6 py-4 sticky top-0 z-50 rounded-b-xl">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
 
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
+        {/* LOGO - Role Based Navigation */}
+        <div
+          onClick={() => {
+            if (loggedInUser?.role === "admin") {
+              navigate("/admin/dashboard");
+            } else {
+              navigate("/");
+            }
+          }}
+          className="flex items-center gap-2 cursor-pointer"
+        >
           <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center text-yellow-400 font-bold text-xl">
             🧴
           </div>
           <span className="text-xl font-extrabold text-white">Scentora</span>
-        </Link>
+        </div>
 
-       <div className="hidden md:block w-1/3">
-  <input
-    type="text"
-    placeholder="Search perfumes..."
-    onChange={(e) => setSearchTerm(e.target.value)}
-    className="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-white placeholder-gray-300 focus:ring-2 focus:ring-yellow-400 outline-none shadow-sm"
-  />
-</div>
-
+        {/* SEARCH BAR - Desktop */}
+        <div className="hidden md:block w-1/3">
+          <input
+            type="text"
+            placeholder="Search perfumes..."
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-white placeholder-gray-300 focus:ring-2 focus:ring-yellow-400 outline-none shadow-sm"
+          />
+        </div>
 
         {/* Right Side */}
         <div className="flex items-center space-x-4">
