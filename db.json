@@ -67,7 +67,8 @@
       "name": "Vismaya KP",
       "email": "vismaya@gmail.com",
       "password": "12345",
-      "role": "user"
+      "role": "user",
+      "isBlocked":false
     },
     {
       "id": 99,
@@ -81,7 +82,8 @@
       "name": "Gayathri K",
       "email": "gayu@gmail.com",
       "password": "12345678",
-      "role": "user"
+      "role": "user",
+      "isBlocked":false
     }
   ],
   "cart": [

@@ -50,7 +50,9 @@ function Signup() {
       name,
       email,
       password,
-      role: "user", // Always assign normal user
+      role: "user",
+      isBlocked:false
+       // Always assign normal user
     };
 
     // SAVE TO DATABASE

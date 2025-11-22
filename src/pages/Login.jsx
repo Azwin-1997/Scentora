@@ -39,6 +39,11 @@ function Login() {
       return;
     }
 
+    if(foundUser.isBlocked){
+        alert(`Your account has been blocked by admin`)
+        return;
+    }
+
     // Store login state
     localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
 
