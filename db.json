@@ -8,7 +8,7 @@
       "price": 125,
       "size_ml": 100,
       "category": "Eau de Parfum (EDP)",
-      "image_url": "https://dummyimage.com/400x400/8064A2/ffffff&text=Midnight+Bloom",
+      "image_url": "https://www.victoriassecret.in/on/demandware.static/-/Sites-vs_master_catalog/default/dw6b498e83/large/112592034285_OM_F.jpg",
       "stock": 45,
       "rating": 4.8
     },
@@ -51,7 +51,7 @@
     {
       "id": "9045",
       "name": "Fogg",
-      "brand": "Body Spray",
+      "brand": "Body Spray For Men",
       "description": "Kya Chal Raha Hei? fogg chal raha hai",
       "price": 130,
       "size_ml": 150,
@@ -68,7 +68,7 @@
       "email": "vismaya@gmail.com",
       "password": "12345",
       "role": "user",
-      "isBlocked":false
+      "isBlocked": false
     },
     {
       "id": 99,
@@ -83,7 +83,7 @@
       "email": "gayu@gmail.com",
       "password": "12345678",
       "role": "user",
-      "isBlocked":false
+      "isBlocked": false
     }
   ],
   "cart": [

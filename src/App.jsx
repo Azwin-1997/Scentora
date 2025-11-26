@@ -9,7 +9,7 @@ import AdminDashboard from "./admin/AdminDashboard";
 import AddProduct from "./admin/AddProduct";
 import AdminManageProducts from "./admin/AdminManageProducts";
 import AdminManageUsers from "./admin/AdminManageUsers";
-
+import AdminUpdateProduct from "./admin/AdminUpdateProduct";
 
 function App() {
   return (
@@ -27,12 +27,18 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/cart" element={<CartPage />}/>
+        <Route path="/cart" element={<CartPage />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/admin/add-product" element={<AddProduct />}/>
-        <Route path="/admin/manage-products" element={<AdminManageProducts />}/>
-        <Route path="/admin/users" element={<AdminManageUsers />}/>
-
+        <Route path="/admin/add-product" element={<AddProduct />} />
+        <Route
+          path="/admin/manage-products"
+          element={<AdminManageProducts />}
+        />
+        <Route path="/admin/users" element={<AdminManageUsers />} />
+        <Route
+          path="/admin/update-product/:id"
+          element={<AdminUpdateProduct />}
+        />
       </Routes>
     </Router>
   );

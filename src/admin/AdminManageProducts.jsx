@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function AdminManageProducts() {
   const [data, setData] = useState([]);
@@ -18,14 +19,11 @@ function AdminManageProducts() {
   return (
     <div className="p-6">
       {/* PAGE TITLE */}
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">
-        Manage Products
-      </h1>
+      <h1 className="text-3xl font-bold text-gray-800 mb-6">Manage Products</h1>
 
       {/* TABLE WRAPPER */}
       <div className="overflow-x-auto bg-white shadow-lg rounded-xl">
         <table className="w-full text-left border-collapse">
-          
           {/* TABLE HEADER */}
           <thead className="bg-gray-800 text-white">
             <tr>
@@ -44,7 +42,6 @@ function AdminManageProducts() {
           <tbody>
             {data.map((p) => (
               <tr key={p.id} className="border-b hover:bg-gray-100">
-                
                 {/* IMAGE */}
                 <td className="p-4">
                   <img
@@ -74,9 +71,12 @@ function AdminManageProducts() {
 
                 {/* ACTION BUTTONS */}
                 <td className="p-4 flex gap-3 justify-center">
-                  <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
-                    Edit
-                  </button>
+                  <Link to={`/admin/update-product/${p.id}`}>
+                    <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                      Edit
+                    </button>
+                  </Link>
+
                   <button className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700">
                     Delete
                   </button>
