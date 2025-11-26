@@ -18,7 +18,7 @@ function AdminManageUsers() {
       isBlocked: !user.isBlocked,
     });
 
-    handleUsers(); // refresh table
+    handleUsers(); // refresh after update
   };
 
   return (
@@ -40,12 +40,14 @@ function AdminManageUsers() {
             </tr>
           </thead>
 
-          {/* BODY – DYNAMIC MAPPING */}
+          {/* BODY */}
           <tbody>
             {data.map((user) => (
               <tr key={user.id} className="border-b hover:bg-gray-100">
                 {/* NAME */}
-                <td className="p-4 font-semibold text-gray-800">{user.name}</td>
+                <td className="p-4 font-semibold text-gray-800">
+                  {user.name}
+                </td>
 
                 {/* EMAIL */}
                 <td className="p-4 text-gray-600">{user.email}</td>
@@ -69,6 +71,7 @@ function AdminManageUsers() {
                 {/* ACTION BUTTON */}
                 <td className="p-4 text-center">
                   <button
+                    onClick={() => toggleBlock(user)}   // <-- FIXED
                     className={`px-4 py-2 rounded-md text-white 
                       ${
                         user.isBlocked
