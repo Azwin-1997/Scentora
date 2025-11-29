@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HeaderCarousel from "./components/HeaderCarousel";
 import ProductsPage from "./pages/ProductsPage";
-import Login from "./pages/Login"; // 👈 Make sure you import this
+import Login from "./pages/Login"; 
 import Signup from "./pages/Signup";
 import CartPage from "./pages/CartPage";
 import AdminDashboard from "./admin/AdminDashboard";
@@ -10,6 +10,7 @@ import AddProduct from "./admin/AddProduct";
 import AdminManageProducts from "./admin/AdminManageProducts";
 import AdminManageUsers from "./admin/AdminManageUsers";
 import AdminUpdateProduct from "./admin/AdminUpdateProduct";
+import Footer from "./pages/Footer";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           element={<AdminUpdateProduct />}
         />
       </Routes>
+      <Footer />
     </Router>
   );
 }
