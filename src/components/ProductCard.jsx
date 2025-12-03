@@ -1,6 +1,34 @@
+import axios from "axios";
 import AddToCartButton from "./AddToCartButton";
 
 function ProductCard({ product }) {
+  const addToWishlist = async () => {
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+    if (!loggedInUser) {
+      alert("Please login to add to wishlist");
+      return;
+    }
+
+    // check if already exists
+    const res = await axios.get(
+      `http://localhost:3001/wishlist?userId=${loggedInUser.id}&productId=${product.id}`
+    );
+
+    if (res.data.length > 0) {
+      alert("This product is already in your wishlist");
+      return;
+    }
+
+    // add to wishlist
+    await axios.post("http://localhost:3001/wishlist", {
+      userId: loggedInUser.id,
+      productId: product.id,
+    });
+
+    alert("Added to Wishlist ❤️");
+  };
+
   return (
     <div className="border rounded-xl shadow-sm hover:shadow-md transition bg-white overflow-hidden">
       <img
@@ -29,7 +57,11 @@ function ProductCard({ product }) {
 
         <div className="flex gap-3">
           <AddToCartButton product={product} />
-          <button className="flex-1 border border-rose-600 text-rose-600 py-2 rounded-lg hover:bg-rose-50 transition">
+
+          <button
+            onClick={addToWishlist}
+            className="flex-1 border border-rose-600 text-rose-600 py-2 rounded-lg hover:bg-rose-50 transition"
+          >
             Wishlist
           </button>
         </div>
