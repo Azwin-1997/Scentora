@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { CartContext } from "../context/CartProvider";
-import { SearchContext } from "../context/SearchProvider";
+import { CartContext } from "../context/CartContext";
+import { SearchContext } from "../context/SearchContext";
 
 function Navbar() {
   const navigate = useNavigate();
