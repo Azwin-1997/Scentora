@@ -1,16 +1,16 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import HeaderCarousel from "./components/HeaderCarousel";
-import ProductsPage from "./pages/ProductsPage";
-import Login from "./pages/Login"; 
-import Signup from "./pages/Signup";
-import CartPage from "./pages/CartPage";
-import AdminDashboard from "./admin/AdminDashboard";
-import AddProduct from "./admin/AddProduct";
-import AdminManageProducts from "./admin/AdminManageProducts";
-import AdminManageUsers from "./admin/AdminManageUsers";
-import AdminUpdateProduct from "./admin/AdminUpdateProduct";
-import Footer from "./pages/Footer";
+import Navbar from "./components/Navbar.jsx";
+import HeaderCarousel from "./components/HeaderCarousel.jsx";
+import ProductsPage from "./pages/ProductsPage.jsx";
+import Login from "./pages/Login.jsx"; 
+import Signup from "./pages/Signup.jsx";
+import CartPage from "./pages/CartPage.jsx";
+import AdminDashboard from "./admin/AdminDashboard.jsx";
+import AddProduct from "./admin/AddProduct.jsx";
+import AdminManageProducts from "./admin/AdminManageProducts.jsx";
+import AdminManageUsers from "./admin/AdminManageUsers.jsx";
+import AdminUpdateProduct from "./admin/AdminUpdateProduct.jsx";
+import Footer from "./pages/Footer.jsx";
 
 function App() {
   return (
