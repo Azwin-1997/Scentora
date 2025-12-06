@@ -12,7 +12,7 @@ function ProductsPage() {
 
   const getProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/products");
+      const response = await axios.get("https://scentora-server.onrender.com/products");
       setProducts(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);

@@ -64,7 +64,7 @@ function AddProduct() {
 
     // 3. Duplicate check
     try {
-      const res = await axios.get("http://localhost:3001/products");
+      const res = await axios.get("https://scentora-server.onrender.com/products");
       const products = res.data;
       const duplicate = products.find(
         (p) => p.name.toLowerCase() === formData.name.toLowerCase()
@@ -91,7 +91,7 @@ function AddProduct() {
 
     // 5. POST to database
     try {
-      await axios.post("http://localhost:3001/products", finalData);
+      await axios.post("https://scentora-server.onrender.com/products", finalData);
       alert("Product added successfully!");
 
       // 6. Reset form

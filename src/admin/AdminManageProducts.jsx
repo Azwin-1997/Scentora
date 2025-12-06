@@ -7,7 +7,7 @@ function AdminManageProducts() {
 
   // FETCH PRODUCTS
   const getProducts = async () => {
-    const response = await axios.get(`http://localhost:3001/products`);
+    const response = await axios.get(`https://scentora-server.onrender.com/products`);
     setData(response.data);
   };
 
@@ -24,7 +24,7 @@ function AdminManageProducts() {
     if (!confirmDelete) {
       return;
     } else {
-      await axios.delete(`http://localhost:3001/products/${id}`);
+      await axios.delete(`https://scentora-server.onrender.com/products/${id}`);
       getProducts();
     }
   };

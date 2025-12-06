@@ -12,7 +12,7 @@ function ProductCard({ product }) {
 
     // Check if already in wishlist
     const res = await axios.get(
-      `http://localhost:3001/wishlist?userId=${loggedInUser.id}&productId=${product.id}`
+      `https://scentora-server.onrender.com/wishlist?userId=${loggedInUser.id}&productId=${product.id}`
     );
 
     if (res.data.length > 0) {
@@ -21,7 +21,7 @@ function ProductCard({ product }) {
     }
 
     // Add to wishlist
-    await axios.post("http://localhost:3001/wishlist", {
+    await axios.post("https://scentora-server.onrender.com/wishlist", {
       userId: loggedInUser.id,
       productId: product.id,
     });

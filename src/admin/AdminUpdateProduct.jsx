@@ -22,7 +22,7 @@ function AdminUpdateProduct() {
   });
 
   const getProduct = async () => {
-    const res = await axios.get(`http://localhost:3001/products?id=${id}`);
+    const res = await axios.get(`https://scentora-server.onrender.com/products?id=${id}`);
     setFormData(res.data[0]);
     
     setLoading(false);
@@ -99,7 +99,7 @@ function AdminUpdateProduct() {
 
     
     // 5. PUT (UPDATE)
-    await axios.put(`http://localhost:3001/products/${id}`, finalData);
+    await axios.put(`https://scentora-server.onrender.com/products/${id}`, finalData);
     alert("Product updated successfully!");
     navigate("/admin/manage-products");
   };

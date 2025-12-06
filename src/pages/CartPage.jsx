@@ -27,7 +27,7 @@ function CartPage() {
   // Fetch the cart from JSON server
   const fetchCart = async (userId) => {
     const res = await axios.get(
-      `http://localhost:3001/cart?userId=${userId}&_expand=product`
+      `https://scentora-server.onrender.com/cart?userId=${userId}&_expand=product`
     );
     setCartItems(res.data);
 
@@ -38,7 +38,7 @@ function CartPage() {
 
   // Increase quantity
   const increaseQty = async (item) => {
-    await axios.patch(`http://localhost:3001/cart/${item.id}`, {
+    await axios.patch(`https://scentora-server.onrender.com/cart/${item.id}`, {
       quantity: item.quantity + 1,
     });
 
@@ -48,9 +48,9 @@ function CartPage() {
   // Decrease quantity
   const decreaseQty = async (item) => {
     if (item.quantity === 1) {
-      await axios.delete(`http://localhost:3001/cart/${item.id}`);
+      await axios.delete(`https://scentora-server.onrender.com/cart/${item.id}`);
     } else {
-      await axios.patch(`http://localhost:3001/cart/${item.id}`, {
+      await axios.patch(`https://scentora-server.onrender.com/cart/${item.id}`, {
         quantity: item.quantity - 1,
       });
     }
@@ -60,7 +60,7 @@ function CartPage() {
 
   // Remove item completely
   const removeItem = async (item) => {
-    await axios.delete(`http://localhost:3001/cart/${item.id}`);
+    await axios.delete(`https://scentora-server.onrender.com/cart/${item.id}`);
     fetchCart(item.userId);
   };
 

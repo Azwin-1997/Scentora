@@ -12,14 +12,14 @@ function Wishlist() {
   // 1️⃣ Get wishlist for logged in user
   const getWishlist = async () => {
     const res = await axios.get(
-      `http://localhost:3001/wishlist?userId=${user.id}`
+      `https://scentora-server.onrender.com/wishlist?userId=${user.id}`
     );
     setWishlistItems(res.data);
   };
 
   // 2️⃣ Get all products
   const getProducts = async () => {
-    const res = await axios.get(`http://localhost:3001/products`);
+    const res = await axios.get(`https://scentora-server.onrender.com/products`);
     setProducts(res.data);
   };
 

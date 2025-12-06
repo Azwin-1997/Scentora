@@ -35,7 +35,7 @@ function Signup() {
     }
 
     // CHECK IF USER ALREADY EXISTS
-    const res = await axios.get("http://localhost:3001/users");
+    const res = await axios.get("https://scentora-server.onrender.com/users");
     const users = res.data;
 
     const userExists = users.find((user) => user.email === email);
@@ -56,7 +56,7 @@ function Signup() {
     };
 
     // SAVE TO DATABASE
-    await axios.post("http://localhost:3001/users", newUser);
+    await axios.post("https://scentora-server.onrender.com/users", newUser);
 
     alert("Successfully Signed Up");
     navigate("/");

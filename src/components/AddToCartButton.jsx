@@ -16,7 +16,7 @@ function AddToCartButton({ product }) {
       }
 
       const res = await axios.get(
-        `http://localhost:3001/cart?userId=${loggedInUser.id}`
+        `https://scentora-server.onrender.com/cart?userId=${loggedInUser.id}`
       );
       const userCart = res.data;
 
@@ -25,7 +25,7 @@ function AddToCartButton({ product }) {
       );
 
       if (existingItem) {
-        await axios.patch(`http://localhost:3001/cart/${existingItem.id}`, {
+        await axios.patch(`https://scentora-server.onrender.com/cart/${existingItem.id}`, {
           quantity: existingItem.quantity + 1,
         });
 
@@ -34,7 +34,7 @@ function AddToCartButton({ product }) {
         return;
       }
 
-      await axios.post(`http://localhost:3001/cart`, {
+      await axios.post(`https://scentora-server.onrender.com/cart`, {
         userId: loggedInUser.id,
         product: product,
         quantity: 1,

@@ -26,7 +26,7 @@ function Login() {
     }
 
     // Fetch users from DB
-    const res = await axios.get("http://localhost:3001/users");
+    const res = await axios.get("https://scentora-server.onrender.com/users");
     const users = res.data;
 
     // Find matching user

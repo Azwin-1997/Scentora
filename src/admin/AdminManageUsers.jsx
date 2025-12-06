@@ -5,7 +5,7 @@ function AdminManageUsers() {
   const [data, setData] = useState([]);
 
   const handleUsers = async () => {
-    const response = await axios.get(`http://localhost:3001/users`);
+    const response = await axios.get(`https://scentora-server.onrender.com/users`);
     setData(response.data);
   };
 
@@ -14,7 +14,7 @@ function AdminManageUsers() {
   }, []);
 
   const toggleBlock = async (user) => {
-    await axios.patch(`http://localhost:3001/users/${user.id}`, {
+    await axios.patch(`https://scentora-server.onrender.com/users/${user.id}`, {
       isBlocked: !user.isBlocked,
     });
 

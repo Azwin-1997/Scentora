@@ -9,7 +9,7 @@ function AdminDashboard() {
 
   const getDashboardData = async () => {
     // Fetch products
-    const productRes = await axios.get(`http://localhost:3001/products`);
+    const productRes = await axios.get(`https://scentora-server.onrender.com/products`);
     const products = productRes.data;
 
     // Total Products
@@ -20,7 +20,7 @@ function AdminDashboard() {
     setLowStock(lowStockItems);
 
     // Users count
-    const userRes = await axios.get(`http://localhost:3001/users`);
+    const userRes = await axios.get(`https://scentora-server.onrender.com/users`);
     setUserCount(userRes.data.length);
   };
 
